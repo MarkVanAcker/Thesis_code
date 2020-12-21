@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>This can be any web page</h1>
+<h3>calculate factorial</h3>
+<input type="text" name="factnum"><br>
+<button onclick="clickFunc()"=>Run factorial</button><button onclick="loadModules()">Load in modules</button><button onclick="killEnclave()">Kill Enclave</button>
+<script>
+    function go(wasmC,param) {
+        var editorExtensionId = "fcdgmdjfeepbhmjhifoeaeaegejjcnel";
+        console.log("I am about to send the request to the Extension");
+        fetch(wasmC)
+            .then(response => response.text())
+            .then((data) => {
+                let fullwasm = data.split("\n");
+                chrome.runtime.sendMessage(editorExtensionId, {message: "runWebAssembly", wasmcode: fullwasm[0],authtag: fullwasm[1]},null);
+            });
+
+        console.log("I sent the request to the Extension");
+    }
+
+    function clickFunc(){
+        let par = document.getElementsByName("factnum")[0].value;
+        console.log("I am about to send the clickFunc request to the Extension");
+        fetch("getwasm")
+            .then(response => response.text())
+            .then((data) => {
+                let fullwasm = data.split("\n");
+                chrome.runtime.sendMessage("fcdgmdjfeepbhmjhifoeaeaegejjcnel", {message: "runWebAssembly", wasmcode: fullwasm[2],authtag: fullwasm[3]},function(response) {
+                    document.getElementById('here').innerHTML += "Answer: " + response.data.res + " calculated in enclave.";
+                });
+            });
+    }
+    function loadModules(){
+        let par = document.getElementsByName("factnum")[0].value;
+        go("getwasm",par);
+        document.getElementById('here').innerHTML = "<span>The wasm code has been loaded into the enclave.</span><br>";
+    }
+    function killEnclave(){
+        chrome.runtime.sendMessage("fcdgmdjfeepbhmjhifoeaeaegejjcnel", {disconnect : true}, null);
+    }
+    function startEnclave(){
+        chrome.runtime.sendMessage("fcdgmdjfeepbhmjhifoeaeaegejjcnel", {loadenclave : true}, null);
+        console.log("Enclave loaded");
+    }
+    window.onload = startEnclave();
+</script>
+<div id="here"></div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/samplecode/wasmi2/enclave/sgxwasm/target/debug/deps/sgx_tseal-84dba53577ce1a02.rmeta: /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/lib.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/seal.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/aad.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/internal.rs
+
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/samplecode/wasmi2/enclave/sgxwasm/target/debug/deps/libsgx_tseal-84dba53577ce1a02.rlib: /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/lib.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/seal.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/aad.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/internal.rs
+
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/samplecode/wasmi2/enclave/sgxwasm/target/debug/deps/sgx_tseal-84dba53577ce1a02.d: /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/lib.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/seal.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/aad.rs /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/internal.rs
+
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/lib.rs:
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/seal.rs:
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/aad.rs:
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_tseal/src/internal.rs:

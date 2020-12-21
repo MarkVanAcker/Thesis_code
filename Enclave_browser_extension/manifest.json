@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Browser enclave extension",
+	"description": "This extension connects to an enclave on the host platform.",
+	"version": "1.0",
+
+  "background": {
+    "scripts":["bg.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*","https://*/*"],
+    "js": ["popup.js"],
+    "run_at": "document_start"
+  }],
+  "externally_connectable": {
+    "matches": ["http://localhost:8000/*","http://localhost:1337/*","http://192.168.56.1/*", "http://192.168.1.114/*", "http://134.58.39.196/*"]
+  },
+    "browser_action": {
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+}

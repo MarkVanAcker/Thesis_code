@@ -1,0 +1,9 @@
+{
+  "name": "com.asier.securejs",
+  "description": "Native messaging host",
+  "path": "/home/mark/Documents/Thesis/incubator-teaclave-sgx-sdk-master/samplecode/wasmi/bin/com.mark.wasm_enclave",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://fcdgmdjfeepbhmjhifoeaeaegejjcnel/"
+  ]
+}

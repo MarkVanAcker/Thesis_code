@@ -1,0 +1,5 @@
+x86_64/longjmp.lo: \
+ /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_unwind/../sgx_unwind/libunwind/src/x86_64/longjmp.S \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

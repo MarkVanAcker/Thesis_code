@@ -1,0 +1,8 @@
+x86_64/setcontext.lo: \
+ /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_unwind/../sgx_unwind/libunwind/src/x86_64/setcontext.S \
+ /usr/include/stdc-predef.h \
+ /home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_unwind/../sgx_unwind/libunwind/src/x86_64/ucontext_i.h
+
+/usr/include/stdc-predef.h:
+
+/home/mark/Documents/Thesis/rust_wasmi_enclave/incubator-teaclave-sgx-sdk/sgx_unwind/../sgx_unwind/libunwind/src/x86_64/ucontext_i.h:

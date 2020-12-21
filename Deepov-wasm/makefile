@@ -1,0 +1,48 @@
+# Var definitions
+
+export MAKEFLAGS=-j3
+
+#CXX = clang++
+CXX=/home/mark/Public/wasi-sdk-9.0/bin/clang++
+
+CXX_FLAGS = -W -Wall -Wcast-qual -std=c++14 -flto
+LD_FLAGS = -Wall -Wcast-qual -std=c++14 -lpthread -flto
+
+CXX_FLAGS += --sysroot=/home/mark/Public/wasi-sdk-9.0/share/wasi-sysroot -fno-exceptions -DNDEBUG -O0 -DIS_64BIT
+LD_FLAGS += --sysroot=/home/mark/Public/wasi-sdk-9.0/share/wasi-sysroot -fno-exceptions -DNDEBUG -O0 -DIS_64BIT
+
+ifeq ($(NO_POPCNT), 1)
+    EXTRA_FLAGS += -DNO_POPCNT
+    NO_POPCNT = 0
+endif
+
+
+SRC_FILES := $(wildcard src/*.cpp)
+
+TEST_FILES := $(wildcard test/*.cpp)
+TEST_FILES += $(sort $(SRC_FILES) $(TEST_FILES))
+TEST_FILES := $(filter-out src/Main.cpp, $(TEST_FILES))
+
+OBJ_FILES := $(addprefix obj/,$(notdir $(SRC_FILES:.cpp=.o)))
+OBJ_TEST_FILES := $(addprefix obj/,$(notdir $(TEST_FILES:.cpp=.o)))
+
+SRC_DIR = $(shell pwd)/src
+
+all: Deepov
+
+Deepov: $(OBJ_FILES)
+	$(CXX)  -o $@ $^ $(LD_FLAGS) $(EXTRA_FLAGS)
+
+obj/%.o: src/%.cpp
+	mkdir -p obj
+	$(CXX) $(CXX_FLAGS) -c -o $@ $<
+
+clean:
+	rm -rf $(OBJ_TEST_FILES) rm -rf $(OBJ_FILES)
+
+DeepovTesting: $(OBJ_TEST_FILES)
+	$(CXX) -o $@ $^ $(LD_FLAGS) $(EXTRA_FLAGS)
+
+obj/%.o: test/%.cpp
+	$(CXX) $(CC_FLAGS) -I $(SRC_DIR) -c -o $@ $<
+
