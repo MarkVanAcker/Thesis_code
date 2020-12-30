@@ -1,0 +1,43 @@
+https://github.com/WebAssembly/testsuite
+
+both wasmi 0.4.0
+
+compile with -03
+
+both in release mode
+
+clock_gettime(monotonic clock) in UNIX
+and uses insecure_time usercall in SGX.
+
+benchmarks ran on:
+Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
+
+16GB RAM
+
+
+all the versiosn
+rustc and cargo compiler: rustc 1.41.0 
+
+get=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.4.0 / clang version 6.0.0
+
+rust sgx - sdk  1.1.3
+
+trying to benchmark computational overhead of SGX.
+Because of the  is an interpreter this thesis focusses
+
+use 5 small testsuite cases to benchamrk. these are not designed for benchmarks but because they were easily accessable they were used as microbenchmarks to give a first indicator.
+
+make use of the polybenchmark kernels. which are fast mathematical functions.
+
+2 Matrix multiplications
+
+
+graphs generated with matplotlib
+
+no boxplot used because variance not big.
+
+don't make any claims just say that SGX is slower and try to explain.
+
+Also in discussion: You can't paralellise yet with this technology. wassm can I think but not wasmi
